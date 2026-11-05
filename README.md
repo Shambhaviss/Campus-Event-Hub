@@ -99,3 +99,120 @@ Campus-Event-Hub/
 ### Prerequisites
 - Node.js and npm
 - MongoDB database
+- Git
+
+### 1. Clone the Repository
+
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd Campus-Event-Hub
+```
+
+### 2. Set Up the Backend
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file in the backend directory and configure the required environment variables:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+FRONTEND_URL=http://localhost:5173
+```
+
+Additional environment variables may be required for Google OAuth, email services, and AI integrations depending on the features you configure.
+
+Start the backend:
+
+```bash
+npm run dev
+```
+
+### 3. Set Up the Frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open the local URL displayed by Vite, usually:
+
+```text
+http://localhost:5173
+```
+
+## API Overview
+
+The backend exposes modular API route groups, including:
+
+| Endpoint | Purpose |
+|---|---|
+| `/api/auth` | Authentication and account management |
+| `/api/users` | User management |
+| `/api/admin` | Administrative operations |
+| `/api/events` | Event management |
+| `/api/registrations` | Event registrations |
+| `/api/notifications` | Notifications |
+| `/api/discussions` | Event discussions |
+| `/api/certificates` | Certificate operations |
+| `/api/feedback` | Feedback management |
+| `/api/admin-logs` | Administrative audit logs |
+| `/api/health` | Application health and diagnostics |
+
+Most administrative operations are protected by authentication and role-based authorization.
+
+## Security Measures
+
+- JWT-based authentication and protected API routes.
+- Role-based access control.
+- Password hashing with bcrypt.
+- Login and registration rate limiting.
+- Helmet security headers.
+- CORS configuration.
+- Request-body sanitization.
+- Cryptographically generated password-reset tokens with expiry.
+- Environment variables for sensitive configuration.
+
+## Development
+
+Backend development:
+
+```bash
+npm run dev
+```
+
+Frontend development:
+
+```bash
+npm run dev
+```
+
+Frontend production build:
+
+```bash
+npm run build
+```
+
+Frontend linting:
+
+```bash
+npm run lint
+```
+
+## Project Objective
+
+Campus Event Hub aims to make college event coordination more organized and accessible by providing a centralized platform for students and administrators. It combines full-stack web development, database management, authentication, API integration, and administrative workflows in one application.
+
+## Future Enhancements
+
+- Cloud deployment and scalable infrastructure.
+- Automated testing and CI/CD integration.
+- Advanced analytics and reporting.
+- Enhanced monitoring and performance optimization.
