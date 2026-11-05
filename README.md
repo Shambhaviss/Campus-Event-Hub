@@ -1,134 +1,101 @@
 # Team_1_Group_1
 # Campus Event Hub
 
-## 📌 Project Overview
+A full-stack web application designed to simplify campus event management by connecting students, college administrators, and platform administrators through a centralized platform.
 
-**Campus Event Hub** is a web-based event management platform designed to help students discover campus events and enable college administrators to manage event-related activities.
+Campus Event Hub provides features for event discovery, student registrations, QR-based attendance, notifications, certificates, and administrative management.
 
-The project uses the MERN stack to provide a structured platform with role-based access for students, college administrators, and super administrators.
+## Key Features
 
-## 🎯 Objectives
+### User Management & Authentication
+- Role-based access for Students, College Admins, and Super Admins.
+- JWT-based authentication and protected routes.
+- Google OAuth 2.0 integration.
+- Secure password hashing using bcrypt.
+- Forgot password and password reset functionality.
+- College administrator approval workflow.
 
-- Provide a centralized platform for campus events.
-- Organize events by category.
-- Support role-based authentication and access.
-- Allow administrators to manage college events.
-- Store event and user information in a database.
+### Event Management
+- Create, manage, and explore campus events.
+- Organize events into categories such as Technical, Cultural, Sports, and Workshops.
+- Manage event registrations.
+- Upload and manage event images.
 
-## 🛠️ Technologies Used
+### Registration & Attendance
+- Student event registration.
+- QR code generation and scanning for attendance management.
+- Registration tracking and administrative controls.
 
-### Frontend
-- React.js
-- Vite
-- JavaScript
-- HTML and CSS
+### Communication & Engagement
+- Notifications for important activities.
+- Event-related discussions and feedback.
+- Email integration for account and administrative workflows.
+- AI-powered chatbot integration.
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose, if used in the implementation
-- REST APIs
-- Multer for image uploads, if enabled in the current version
+### Administrative Dashboard
+- Separate administrative functionality based on user roles.
+- Manage users, events, and registrations.
+- Review and approve college administrator accounts.
+- Maintain administrative activity logs.
 
-## ✨ Features
+### Application Health & Diagnostics
+- Database connectivity checks.
+- User, event, and registration statistics.
+- Service health status reporting.
+- Manual health-check execution.
+- API response-time and application uptime reporting.
 
-- **Role-based access:** Student, College Admin, and Super Admin roles.
-- **Authentication:** Registration and login interfaces for administrators.
-- **Event categories:** Technical, Cultural, Sports, and Workshops.
-- **Event management:** Backend APIs for working with event information.
-- **Image uploads:** Support for event images, if configured.
-- **Database integration:** MongoDB storage for application data.
-- **Admin dashboard:** Interface for administrative functionality.
+## Technology Stack
 
-*Features listed here should match the functionality currently implemented in the project.*
+| Layer | Technologies |
+|---|---|
+| Frontend | React.js, Vite, JavaScript |
+| Styling | Tailwind CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB, Mongoose |
+| Authentication | JWT, Passport.js, Google OAuth 2.0 |
+| Security | bcrypt, Helmet, CORS, express-rate-limit |
+| API Communication | Axios |
+| QR Functionality | qrcode, html5-qrcode |
+| Data Visualization | Recharts |
+| PDF & Excel Libraries | jsPDF, PDFKit, ExcelJS |
+| Email | Nodemailer |
+| AI Integration | Groq SDK, OpenAI SDK |
+| Development Tools | Git, GitHub, ESLint, Nodemon |
 
-## 🏗️ Project Structure
+## Project Architecture
 
-The project is organized into frontend and backend components.
+The application follows a separate frontend and backend architecture.
 
 ```text
 Campus-Event-Hub/
-├── campus-frontend/
+│
+├── frontend/
 │   ├── src/
-│   ├── public/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── assets/
+│   │   └── ...
 │   ├── package.json
 │   └── vite.config.js
+│
 ├── backend/
-│   ├── package.json
-│   └── server files
-├── README.md
-├── .gitignore
-└── requirements.txt (not required for the JavaScript application)
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   └── routes/
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
 ```
 
-Adjust this structure to match your actual repository folders.
+*Note: The structure above illustrates the main organization; individual folders and filenames may vary.*
 
-## ⚙️ Getting Started
+## Installation and Setup
 
 ### Prerequisites
-
 - Node.js and npm
-- MongoDB
-- Git
-
-### 1. Clone the repository
-
-```bash
-git clone YOUR_REPOSITORY_CLONE_URL
-cd YOUR_PROJECT_FOLDER
-```
-
-Replace the placeholders with your actual GitHub clone URL and project folder name.
-
-### 2. Set up the backend
-
-Open a terminal in the backend directory and install dependencies:
-
-```bash
-npm install
-```
-
-Configure the required environment variables, such as the MongoDB connection string and any authentication secrets, according to the backend configuration.
-
-Start the backend using the script defined in its `package.json`. For example:
-
-```bash
-npm start
-```
-
-### 3. Set up the frontend
-
-Open another terminal in the frontend directory:
-
-```bash
-npm install
-npm run dev
-```
-
-Open the local URL printed by Vite in the terminal.
-
-### 4. Database configuration
-
-Ensure MongoDB is running and that the backend uses the correct connection settings. The database name used during development was `campuseventhub`.
-
-## 🔐 Security
-
-- Keep database credentials, API keys, and authentication secrets in environment variables.
-- Do not upload `.env` files or private credentials to GitHub.
-- Configure authentication and authorization checks on the backend.
-
-## 🔮 Future Improvements
-
-- QR-code-based event attendance.
-- Event participation certificates.
-- Improved event search and filtering.
-- Notifications and event reminders.
-- Enhanced analytics for event participation.
-
-## 👩‍💻 Project Type
-
-Academic team project.
-
-**Author:** Shambhavi Shrivastava
-
+- MongoDB database
